@@ -10,6 +10,5 @@ Reduce is a synonym for Inject. Both reduce a list to a single value.
 If you supply a parameter then this is used as the initial value.
 With no parameter the first item is used as the intial value.
 
-For some reason, some of these scripts run much slower on Ubuntu than Windows.
 
 

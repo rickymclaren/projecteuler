@@ -1,4 +1,4 @@
-! /usr/bin/ruby
+#! /usr/bin/ruby
 # Find the sum of all the even numbers in the fibonacci series below 4 million
 
 series = [1,2]
