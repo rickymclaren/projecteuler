@@ -4,5 +4,10 @@ Solutions can be found at:
 http://code.google.com/p/projecteuler-solutions/wiki/ProjectEulerSolutions
 
 Notes:
+Ruby is a lovely combination of Procedural, Objected Oriented, and Functional Progamming.
+
+Reduce is a synonym for Inject. Both reduce a list to a single value.
+If you supply a parameter then this is used as the initial value.
+With no parameter the first item is used as the intial value.
 
 
