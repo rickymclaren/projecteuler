@@ -10,13 +10,13 @@
 # 
 # Which starting number, under one million, produces the longest chain?
 
-$LIMIT=10000000
+$LIMIT=1000000
 $cache = Array.new($LIMIT,0)
 $cache[1] = 1
 
 def nxt(x)
    return x / 2 if x % 2 == 0
-   return 3 * x + 1
+   3 * x + 1
 end
 
 def chain(x)
@@ -25,8 +25,8 @@ def chain(x)
    $cache[x] = 1 + chain(nxt(x))		# cache it
 end
 
-1.upto(1000000) { |x| chain(x) }
+1.upto(999999) { |x| chain(x) }
 max = $cache.max
-puts (1..1000000).select { |x| $cache[x] == max }
+puts (1..999999).select { |x| $cache[x] == max }
 
 
