@@ -28,18 +28,13 @@ end
 digits = digits.split			# Splits by whitespace into array of 400 strings 08 to 48
 
 segments = []
-(0..399).each do |i| 
+400.times do |i| 
    segments << [i, i+1, i+2, i+3] if i % 20 <= 16					# Horizontal
    segments << [i, i+20, i+40, i+60] if i / 20 <= 16					# Vertical
    segments << [i, i+21, i+42, i+63] if (i % 20 <= 16) && (i / 20 <= 16)		# Diagonal down
    segments << [i, i+1-20, i+2-40, i+3-60] if (i / 20 >= 3) && (i % 20 <= 16)		# Diagonal up
 end
 
-segments.map! do |s| 
-   numbers = s.map { |x| digits[x].to_i }
-   numbers.inject { |memo, x| memo * x }
-end
-
-puts segments.max
+puts segments.map {|s| s.map { |x| digits[x].to_i }.reduce { |memo, x| memo * x } }.max
 
 
