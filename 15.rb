@@ -28,7 +28,7 @@ result = []
 prev = 0
 $LIMIT.times do |i|
    if i == 0
-      (1..($LIMIT+1)).each { |x| result << x }
+      ($LIMIT+1).times { |x| result << x+1 }
    else
       result.map! do |x| 
          if x == 1
