@@ -24,18 +24,14 @@
 # Apart from the rightmost column which is always 1.
 
 $LIMIT = 20
-result = []
+result = (1..$LIMIT+1).to_a
 prev = 0
-$LIMIT.times do |i|
-   if i == 0
-      ($LIMIT+1).times { |x| result << x+1 }
-   else
-      result.map! do |x| 
-         if x == 1
-            prev = 1 
-         else
-            prev = x + prev
-         end
+($LIMIT-1).times do |i|
+   result.map! do |x| 
+      if x == 1
+         prev = 1 
+      else
+         prev = x + prev
       end
    end
 end
