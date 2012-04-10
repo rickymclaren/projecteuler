@@ -26,14 +26,8 @@
 $LIMIT = 20
 result = (1..$LIMIT+1).to_a
 prev = 0
-($LIMIT-1).times do |i|
-   result.map! do |x| 
-      if x == 1
-         prev = 1 
-      else
-         prev = x + prev
-      end
-   end
+($LIMIT-1).times do 
+   result.map! { |x| prev = x == 1 ? 1 : x + prev }
 end
 puts result[-1]
 
