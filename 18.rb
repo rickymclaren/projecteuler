@@ -24,14 +24,14 @@ rows = triangle.split "\n"
 rows = rows.map {|x| x.strip.split.map {|s| s.to_i} }	# convert to arrays of ints
 rows.reverse!						# work from bottom up
 
-(1..(rows.length-1)).each do |r| 
-   row = rows[r]
-   prev = rows[r-1]
-   i = -1
+prev = rows.shift					# remove first row
+rows.each do |row| 
+   i = 0
    row.map! do |x| 
       i += 1
-      x + prev[i..i+1].max
+      x + prev[(i-1)..i].max
    end
+   prev = row
 end
 
 rows.each {|r| puts "[#{r.join ' '}]"}
