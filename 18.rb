@@ -20,8 +20,8 @@ triangle = <<end
 04 62 98 27 23 09 70 98 73 93 38 53 60 04 23
 end
 
-rows = triangle.split "\n"
-rows = rows.map {|x| x.strip.split.map {|s| s.to_i} }	# convert to arrays of ints
+lines = triangle.split "\n"
+rows = lines.map {|l| l.strip.split.map {|s| s.to_i} }	# convert to arrays of ints
 rows.reverse!						# work from bottom up
 
 prev = rows.shift					# remove first row
