@@ -10,5 +10,6 @@ Reduce is a synonym for Inject. Both reduce a list to a single value.
 If you supply a parameter then this is used as the initial value.
 With no parameter the first item is used as the intial value.
 
+I just switched to a MacBook Pro so I will be trying this out using MacRuby
 
 
